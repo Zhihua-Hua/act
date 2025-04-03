@@ -28,6 +28,8 @@ def main(args):
     ckpt_dir = args['ckpt_dir']
     policy_class = args['policy_class']
     onscreen_render = args['onscreen_render']
+    if not onscreen_render:
+        os.environ['MUJOCO_GL'] = 'egl'  # 或 'osmesa's
     task_name = args['task_name']
     batch_size_train = args['batch_size']
     batch_size_val = args['batch_size']

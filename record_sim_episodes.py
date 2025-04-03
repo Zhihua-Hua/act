@@ -27,6 +27,9 @@ def main(args):
     dataset_dir = args['dataset_dir']
     num_episodes = args['num_episodes']
     onscreen_render = args['onscreen_render']
+    if not onscreen_render:
+        print("onscreen: ", onscreen_render)
+        os.environ['MUJOCO_GL'] = 'osmesa'  # 或 'osmesa's
     inject_noise = False
     render_cam_name = 'angle'
 
